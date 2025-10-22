@@ -1,15 +1,15 @@
 ---
 const logos = [
-    { src: '/assets/logos/acura-logo.png', alt: 'Acura' },
-    { src: '/assets/logos/honda-logo.png', alt: 'Honda' },
-    { src: '/assets/logos/kia-logo.png', alt: 'Kia' },
-    { src: '/assets/logos/lexus-logo.png', alt: 'Lexus' },
-    { src: '/assets/logos/mazda-logo.png', alt: 'Mazda' },
-    { src: '/assets/logos/mitsubishi-logo.png', alt: 'Mitsubishi' },
-    { src: '/assets/logos/nissan-logo.png', alt: 'Nissan' },
-    { src: '/assets/logos/subaru-logo.png', alt: 'Subaru' },
-    { src: '/assets/logos/toyota-logo.png', alt: 'Toyota' },
-    { src: '/assets/logos/hyundai-logo.png', alt: 'Hyundai' },
+  { src: "/assets/logos/acura-logo.png", alt: "Acura" },
+  { src: "/assets/logos/honda-logo.png", alt: "Honda" },
+  { src: "/assets/logos/kia-logo.png", alt: "Kia" },
+  { src: "/assets/logos/lexus-logo.png", alt: "Lexus" },
+  { src: "/assets/logos/mazda-logo.png", alt: "Mazda" },
+  { src: "/assets/logos/mitsubishi-logo.png", alt: "Mitsubishi" },
+  { src: "/assets/logos/nissan-logo.png", alt: "Nissan" },
+  { src: "/assets/logos/subaru-logo.png", alt: "Subaru" },
+  { src: "/assets/logos/toyota-logo.png", alt: "Toyota" },
+  { src: "/assets/logos/hyundai-logo.png", alt: "Hyundai" },
 ];
 ---
 
@@ -22,16 +22,16 @@ const logos = [
 <style>
     
     .car-logo-row {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         align-items: center;
-        justify-items: center;
-        margin: 2rem 0 3rem;
+        gap: 3rem;
+        padding: 1.5rem 1rem;
     }
 
     .car-logo-row img {
-        max-height: 40px;
+        max-height: 45px;
         width: auto;
         object-fit: contain;
     }

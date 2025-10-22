@@ -1,0 +1,68 @@
+---
+import ServiceCard from "../../components/ServiceCard.astro";
+import CarLogoRow from "../../components/CarLogoRow.astro";
+
+const services = [
+  {
+    title: "Brake and Rotors.",
+    image: "public/assets/photos/BrakeRotors.jpeg",
+    alt: "Brake service",
+    description: `Brakes making noise or just don't grab like they used to?
+    The Toy Shop offers free brake inspections for all vehicles.
+    All brake jobs include factory brake pads, machining rotors (unless beyond minimum limit) & lubrication.`,
+  },
+  
+  {
+    title: "Time for an oil change.",
+    image: "",
+    alt: "Oil change service",
+    description: `The Toy Shop uses factory oil filters and high quality Chevron oil for all oil changes. Prices 
+    vary depending on engine size. All oil changes include full vehicle inspection including brakes, belts/hoses 
+    and we even top off your fluids!`,
+  },
+  
+  {
+    title: "Factory Service Interval.",
+    image: "",
+    alt: "Factory service maintenance",
+    description: `Is your vehicle due for a major service? The Toy Shop offers factory recommended service catering to 
+    your vehicle. From spark plugs, coolant, transmission fluid, even timing belt and water pump replacement.`,
+  },
+];
+---
+
+<section class="services">
+  <h1>Your Shingle Springs import car service shop.</h1>
+  <p class="subtitle">
+    The Toy Shop basic vehicle maintenance schedule is a great way to keep your vehicle running for many years to come!
+  </p>
+
+  <!-- Car Logo Row -->
+  <CarLogoRow />
+
+  <div class="card-grid">
+    {services.map(service => (
+      <ServiceCard {...service} />
+    ))}
+  </div>
+</section>
+
+<style>
+.services {
+  text-align: center;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  margin-bottom: 2rem;
+  color: #414141);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+</style>
