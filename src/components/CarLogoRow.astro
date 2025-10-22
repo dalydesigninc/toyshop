@@ -1,0 +1,40 @@
+---
+const logos = [
+    { src: '/assets/logos/acura-logo.png', alt: 'Acura' },
+    { src: '/assets/logos/honda-logo.png', alt: 'Honda' },
+    { src: '/assets/logos/kia-logo.png', alt: 'Kia' },
+    { src: '/assets/logos/lexus-logo.png', alt: 'Lexus' },
+    { src: '/assets/logos/mazda-logo.png', alt: 'Mazda' },
+    { src: '/assets/logos/mitsubishi-logo.png', alt: 'Mitsubishi' },
+    { src: '/assets/logos/nissan-logo.png', alt: 'Nissan' },
+    { src: '/assets/logos/subaru-logo.png', alt: 'Subaru' },
+    { src: '/assets/logos/toyota-logo.png', alt: 'Toyota' },
+    { src: '/assets/logos/hyundai-logo.png', alt: 'Hyundai' },
+];
+---
+
+<div class="car-logo-row">
+    {logos.map(logo => (
+     <img src={logo.src} alt={logo.alt} loading="lazy" />
+     ))}
+</div>
+
+<style>
+    
+    .car-logo-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1.5rem;
+        align-items: center;
+        justify-items: center;
+        margin: 2rem 0 3rem;
+    }
+
+    .car-logo-row img {
+        max-height: 40px;
+        width: auto;
+        object-fit: contain;
+    }
+
+</style>
+
