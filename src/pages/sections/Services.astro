@@ -5,7 +5,7 @@ import CarLogoRow from "../../components/CarLogoRow.astro";
 const services = [
   {
     title: "Brake and Rotors.",
-    image: "public/assets/photos/BrakeRotors.jpeg",
+    image: "public/assets/photos/BrakeRotors.jpg",
     alt: "Brake service",
     description: `Brakes making noise or just don't grab like they used to?
     The Toy Shop offers free brake inspections for all vehicles.
@@ -14,7 +14,7 @@ const services = [
   
   {
     title: "Time for an oil change.",
-    image: "",
+    image: "public/assets/photos/OilChange.jpg",
     alt: "Oil change service",
     description: `The Toy Shop uses factory oil filters and high quality Chevron oil for all oil changes. Prices 
     vary depending on engine size. All oil changes include full vehicle inspection including brakes, belts/hoses 
@@ -23,7 +23,7 @@ const services = [
   
   {
     title: "Factory Service Interval.",
-    image: "",
+    image: "public/assets/photos/FactoryService.jpg",
     alt: "Factory service maintenance",
     description: `Is your vehicle due for a major service? The Toy Shop offers factory recommended service catering to 
     your vehicle. From spark plugs, coolant, transmission fluid, even timing belt and water pump replacement.`,
@@ -55,9 +55,14 @@ const services = [
   margin: 0 auto;
 }
 
+.services h1 {
+  margin-bottom: -0.5rem;
+  color: #414141;
+}
+
 .subtitle {
-  margin-bottom: 2rem;
-  color: #414141);
+  margin-bottom: 1.0rem;
+  color: #414141;
 }
 
 .card-grid {
