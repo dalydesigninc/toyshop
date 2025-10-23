@@ -7,23 +7,27 @@ import Iconsrow from "../../components/Iconsrow.astro";
     <div class="text-side">
       <div class="text-content">
         <h2>The Toy Shop is a full services shop.</h2>
+        <div class="icon-row-wrapper">
         <Iconsrow />
+        </div>
         <p>
-          The Toy Shop have ASE Certified technicians that are able to perform any repair from a basic oil change
-          service to engine/transmission repair or replacement. We only use factory made parts for the vehicles we
+          The Toy Shop have ASE Certified technicians that are able to perform any repair from a basic oil change 
+          service to engine/transmission repair or replacement. We only use factory made parts for the vehicles we 
           service so that you are getting a quality part for half the price that the dealership charges you.
         </p>
       </div>
     </div>
 
     <div class="image-side">
-      <img src="/assets/photos/WhiteCarRear.jpg" alt="Full service shop" loading="lazy" />
+      <img src="/assets/photos/WhiteCarRear.jpg" alt="White Car" loading="lazy" />
     </div>
   </div>
 
 <div class="services-include">
     <h3>Services include</h3>
-    <Iconsrow />
+    <div class="icon-row-wrapper">
+        <Iconsrow />
+    </div>
 
     <ul class="service-list">
       <li>Complete Computer Diagnostics</li>
@@ -41,4 +45,95 @@ import Iconsrow from "../../components/Iconsrow.astro";
 
 <style>
     
+  .full-service-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #24222c;
+    min-height: 500px;
+  }
+
+  .text-side {
+    display: flex;
+    flex: 1 1 50%;
+    min-width: 320px;
+    color: #fff;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .text-content {
+    max-width: 500px;
+  }
+
+  .text-content h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .text-content p {
+    line-height: 1.6;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .image-side {
+    flex: 1 1 50%;
+    min-width: 320px;
+    box-sizing: border-box;
+  }
+
+  .image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .icon-row-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem 0;
+  }
+
+  .services-include {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+  }
+
+  .services-include h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #e41e26;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .services-include .icon-row-wrapper {
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .service-list {
+    list-style: disc;
+    margin: 0 auto;
+    max-width: 1000px;
+    column-count: 3;
+    column-gap: 2rem;
+  }
+
+  .service-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #414141;
+  }
+
 </style>
