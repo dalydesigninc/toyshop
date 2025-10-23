@@ -1,0 +1,39 @@
+---
+const logos = [
+  { src: "/assets/logos/circuit-icon.png", alt: "Circuit" },
+  { src: "/assets/logos/shieldcheck-icon.png", alt: "Shield Check" },
+  { src: "/assets/logos/steeringwheel-icon.png", alt: "Steering Wheel" },
+  { src: "/assets/logos/sparkplug-icon.png", alt: "Spark Plug" },
+  { src: "/assets/logos/oilcan-icon.png", alt: "Oil Can" },
+  { src: "/assets/logos/brake-icon.png", alt: "Brake" },
+  { src: "/assets/logos/suspension-icon.png", alt: "Suspension" },
+  { src: "/assets/logos/checkengine-icon.png", alt: "Check Engine" },
+  { src: "/assets/logos/fan-icon.png", alt: "Fan" },
+];
+---
+
+<div class="icons-row">
+    {logos.map(logo => (
+     <img src={logo.src} alt={logo.alt} loading="lazy" />
+     ))}
+</div>
+
+<style>
+    
+    .icons-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .icons-row img {
+        max-height: 35px;
+        width: auto;
+        object-fit: contain;
+    }
+
+</style>
+
