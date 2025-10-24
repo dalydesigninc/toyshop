@@ -5,7 +5,7 @@ const { title, image, alt, description } = Astro.props;
 <div class="service-card">
   <div class="service-image">
     <img src={image} alt={alt} loading="lazy" />
-    <h3>{title}</h3>
+    <h3 set:html={title}></h3>
   </div>
   <div class="service-content">
     <p>{description}</p>
@@ -39,7 +39,7 @@ const { title, image, alt, description } = Astro.props;
 
 .service-image h3 {
   position: absolute;
-  bottom: 25%;
+  bottom: 15%;
   left: 16px;
   color: #fdf499;
   font-size: 1.5rem;
