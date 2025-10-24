@@ -1,0 +1,57 @@
+---
+import ServiceCard from "../../components/ServiceCard.astro";
+
+const specials = [
+  {
+    title: "$59.99+Tax up to 5 Quart Oil Change Service",
+    image: "public/assets/photos/OilChange.jpg",
+    alt: "Oil change service",
+    description: `Free multipoint inspection with all oil changes.
+    Oil changes that require more than 5 quarts will be charged at 
+    non-discounted prices for the remaining quarts. Limit 1 Per Vehicle.`,
+  },
+  
+  {
+    title: "The Toy Shop Timing Belt Special",
+    image: "public/assets/photos/FactoryService.jpg",
+    alt: "Timing belt service",
+    description: `Free timing belt with service-pay only for the labor!
+    Includes all Toyota, Honda, Subaru, Nissan equipped with timing belts.
+    Recommend to replace water pump with service. Only OEM parts used.`,
+  },
+];
+---
+
+<section class="specials">
+  <h1>Ongoing specials</h1>
+
+  <div class="card-grid">
+    {specials.map(service => (
+      <ServiceCard {...service} />
+    ))}
+  </div>
+</section>
+
+<style>
+.specials {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.specials h1 {
+  margin-bottom: 1rem;
+  color: #414141;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+  gap: 2rem;
+  justify-items: center;
+  margin-bottom: 4rem;
+}
+</style>
