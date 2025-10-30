@@ -1,5 +1,6 @@
 ---
 import ServiceCard from "../../components/ServiceCard.astro";
+import CouponCard from "../../components/CouponCard.astro";
 
 const specials = [
   {
@@ -20,16 +21,43 @@ const specials = [
     Recommend to replace water pump with service. Only OEM parts used.`,
   },
 ];
+
+const coupons = [
+  {
+    amount: "$10 Off",
+    description: "Any repair or maintenance service of $100 and up."
+  },
+
+   {
+    amount: "$20 Off",
+    description: "Any repair or maintenance service of $200 and up."
+  },
+
+   {
+    amount: "$50 Off",
+    description: "Any repair or maintenance service of $600 and up."
+  },
+];
 ---
 
 <section class="specials">
-  <h1>Ongoing specials</h1>
+  <div class="specials-header">
+    <h1>Ongoing specials</h1>
+    <span class="line"></span>
+  </div>
 
   <div class="card-grid">
     {specials.map(service => (
       <ServiceCard {...service} />
     ))}
   </div>
+
+  <div class="coupon-grid">
+    {coupons.map(coupon => (
+      <CouponCard {...coupon} />
+    ))}
+  </div>
+
 </section>
 
 <style>
@@ -41,9 +69,27 @@ const specials = [
   margin: 0 auto;
 }
 
+.specials-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.specials-header .line {
+  flex: 1;
+  height: 2px;
+  background: #000;
+  opacity: 0.8;
+}
+
 .specials h1 {
   margin-bottom: 1rem;
   color: #414141;
+  margin: 0;
+  white-space: wrap;
+  display: flex;
+  align-items: center;
 }
 
 .card-grid {
@@ -52,6 +98,16 @@ const specials = [
   width: 100%;
   gap: 2rem;
   justify-items: center;
+  margin-bottom: 2rem;
+}
+
+.coupon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  width: 100%;
+  gap: 2rem;
+  justify-items: center;
   margin-bottom: 4rem;
 }
+
 </style>

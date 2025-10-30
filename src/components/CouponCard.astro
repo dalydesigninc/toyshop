@@ -1,0 +1,43 @@
+---
+const { amount, description } = Astro.props;
+---
+
+<div class="coupon-card">
+   <div class="coupon-content"> 
+    <h3>{amount}</h3>
+    <p>{description}</p>
+   </div>
+</div>
+
+<style>
+.coupon-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #414141;
+  color: #fff;
+  overflow: hidden;
+  max-width: 500px;
+  min-width: 300px;
+  flex: 1;
+}
+
+.coupon-content {
+  padding: 1.25rem;
+  background-color: #414141;
+  text-align: left;
+}
+.coupon-card h3 {
+  color: #fdf499;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.coupon-card p {
+  line-height: 2.1;
+  color: #fff;
+  text-align: left;
+}
+</style>

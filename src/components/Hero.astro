@@ -14,8 +14,8 @@
     </p>
 
     <div class="btn-group">
-      <a href="" class="button">Book an Appointment</a>
-      <button class="button secondary" onclick="window.location.href='tel:+15305551234'">Call Us</button>
+      <a href="" class="button">BOOK AN APPOINTMENT</a>
+      <button class="button secondary" onclick="window.location.href='tel:+15305551234'">CALL US</button>
     </div>
   </div>
 </section>
@@ -71,4 +71,28 @@
   line-height: 1.5;
 }
 
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  background: #f0503a;
+  border: 1px solid #fff;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.button.secondary:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
 </style>
