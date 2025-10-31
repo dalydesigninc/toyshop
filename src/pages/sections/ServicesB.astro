@@ -1,0 +1,110 @@
+---
+import ServiceCardB from "../../components/ServiceCardB.astro";
+
+const topServices = [
+  {
+    title: "Mechanical Problems",
+    image: "public/assets/photos/Mechanical.jpg",
+    alt: "Mechanical Problems",
+    description: `The Toy Shop inspects major and minor mechanical concerns. 
+    Using the latest scan tools, we can diagnose any problem your vehicle has. 
+    We can inspect noises, check engine lights, shifting concerns, and any 
+    engine performance issues you have so we can ensure that you are safe on the road.`,
+  },
+  
+  {
+    title: "Engine Repairs",
+    image: "public/assets/photos/EngineRepair.jpg",
+    alt: "Engine Repairs - Photograph by Garett Mizunaka, Unsplash",
+    description: `The Toy Shop performs all repairs with factory parts and 
+    fair labor times for all jobs. From head gasket repairs/replacement, throttles, 
+    valve adjustments, vacuum lines, and even full engine replacement.`,
+  },
+];
+
+const bottomServices = [
+  {
+    title: "Electrical Problems",
+    image: "public/assets/photos/Electrical.jpg",
+    alt: "Electrical Problems",
+    description: `The Toy Shop has the capability to diagnose many electrical 
+    problems, such as: broken/chewed wires, inoperable windows/automatic doors, 
+    a/c and heater concerns, batteries and charging systems, bad sensors, and much 
+    more. We charge a diagnostic fee of $110.00 for wiring sensor inspection. We also 
+    can diagnose hybrid batteries as well!`,
+  },
+
+  {
+    title: "Transmission & Clutch Repairs",
+    image: "public/assets/photos/Transmission.jpg",
+    alt: "Transmission & Clutch Repairs",
+    description: `The Toy Shop performs transmission diagnosis for any kind of 
+    issue/concern you might be having as well as full transmission replacement if 
+    necessary. We also perform full clutch replacement services for manual transmissions. 
+    Using factory clutch kits, we also include resurfacing flywheels and fluids in 
+    all of our prices.`,
+  },
+
+   {
+    title: "Cooling System Problems",
+    image: "public/assets/photos/Cooling.jpg",
+    alt: "Cooling System Problems",
+    description: `Diagnostics include pressure testing the cooling system as well as a 
+    leak down test on the cylinder heads if needed. We are able to replace any hoses, 
+    sensors, and/or your radiator as well! Plus, we only use factory coolant for all 
+    services on the cooling system of your vehicle for maximum longevity and performance.`,
+  },
+];
+---
+
+<section class="services-section">
+  <div class="services-inner">
+    <div class="grid-two">
+      {topServices.map(service => (
+        <ServiceCardB {...service} />
+      ))}
+    </div>
+
+    <div class="grid-three">
+      {bottomServices.map(service => (
+        <ServiceCardB {...service} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.services-section {
+  display: flex;
+  justify-content: center;
+}
+
+.services-inner {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #24222c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 80%;
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+}
+
+.grid-three {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  width: 80%;
+  gap: 2rem;
+  justify-items: center;
+  margin-bottom: 2rem;
+}
+</style>
