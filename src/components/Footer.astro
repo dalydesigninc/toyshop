@@ -1,34 +1,189 @@
 ---
 import ToyLogo from "../assets/toyshoplogow.svg";
+
+const currentYear = new Date().getFullYear();
 ---
 
-<nav>
+<footer class="footer">
   <div class="container">
-    <div id="logo">
-      <a href="/">
-        <img src={ToyLogo.src ?? ToyLogo} alt="The Toy Shop" />
-      </a>
+    <div class="footer-columns">
+      <div class="footer-left">
+        <img src={ToyLogo.src ?? ToyLogo} alt="The Toy Shop" class="logo" />
+        <p>
+          You're always treated like family here at The Toy Shop! We appreciate your time
+          and business! Hope to see you soon!
+        </p>
+        <p class="copyright"> © {currentYear} The Toy Shop. All Rights Reserved.
+          <a href="/privacy-policy">Privacy Policy</a>
+        </p>
+      </div>
+  
+    <div class="footer-middle">
+      <div class="map-wrapper">
+        <img src="/assets/logos/Map.jpg" alt="Store Location Map" class="map" />
+      </div>
+        <div class="contact-info">
+        <p class="phone">530-677-0989</p>
+        <a href="mailto:info@ToyShopAutoRepair.com" class="email">info@ToyShopAutoRepair.com</a>
+        <p class="address"> 
+          4241 SUNSET LANE<br />
+          Shingle Springs, CA 95682
+        </p>
+        </div>
+    </div>
+
+    <div class="footer-right">
+      <div class="night-drop">
+        <img src="/assets/logos/Moon-icon.png" alt="Night Drop" class="icon" />
+        <p class="night-title">NIGHT DROP AVAILABLE.</p>
+      </div>
+        <p class="hours">Open Monday-Friday 8:00am-5:00pm</p>
+
+    <div class="facebook">
+      <img src="/assets/logos/FB-logo.png" alt="Facebook Logo" class="icon fb" />
+      <p>Like us on Facebook for promotional offers and deals!</p>
     </div>
   </div>
-</nav>
+</footer>
 
 <style>
+  .footer {
+    background-color: #414141;
+    color: #fff;
+    padding: 2.5rem 0;
+  }
+
   .container {
     width: 1200px;
     margin: 0 auto;
-    align-items: center;
-  }
-  #logo img {
-    height: 45px;
+ } 
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 2rem;
+ }
+ 
+  .footer-left p {
+    font-size: 1rem;
+    line-height: 1.5;
+ }
+
+  .logo {
+    height: 48px;
+    margin-bottom: 1rem;
+ }
+
+  .copyright {
+    font-size: 0.75rem;
+    margin-top: 1.25;
+ }
+
+  .copyright a {
+    color: #fff;
+    text-decoration: underline;
+ }
+
+ /* Middle */
+
+  .footer-middle {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 
-  nav {
-    position: relative;
+  .map-wrapper {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .map {
+    width: 220px;
+    height: 140px;
+    object-fit: cover;
+    margin: 0;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+  }
+
+  .contact-info p,
+  .contact-info a {
+    margin: 0;
+    padding: 0;
+  }
+
+  .map, .contact-info {
+    margin: 0;
+    padding: 0;
+  }
+
+  .phone {
+    font-family: "apotek-extrawide", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #f0503a;
+  }
+
+  .email {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .address {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+/* RIGHT */
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .night-drop {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 12px 24px;
-    background-color: #414141;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 0.1);
+    gap: 0.5rem;
+  }
+
+  .night-drop .icon {
+    height: 2.5rem;
+  }
+
+  .night-title {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .hours {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .facebook {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .facebook .fb {
+    height: 1.75rem;
+  }
+
+  .facebook .p {
+    font-size: 1rem;
   }
 </style>
