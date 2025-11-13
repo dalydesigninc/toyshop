@@ -11,7 +11,7 @@ const services = [
     The Toy Shop offers free brake inspections for all vehicles.
     All brake jobs include factory brake pads, machining rotors (unless beyond minimum limit) & lubrication.`,
   },
-  
+
   {
     title: "Time for an oil change.",
     image: "public/assets/photos/OilChange.jpg",
@@ -20,7 +20,7 @@ const services = [
     vary depending on engine size. All oil changes include full vehicle inspection including brakes, belts/hoses 
     and we even top off your fluids!`,
   },
-  
+
   {
     title: "Factory Service Interval.",
     image: "public/assets/photos/FactoryService.jpg",
@@ -34,42 +34,45 @@ const services = [
 <section class="services">
   <h1>Your Shingle Springs import car service shop.</h1>
   <p class="subtitle">
-    The Toy Shop basic vehicle maintenance schedule is a great way to keep your vehicle running for many years to come!
+    The Toy Shop basic vehicle maintenance schedule is a great way to keep your
+    vehicle running for many years to come!
   </p>
 
   <!-- Car Logo Row -->
   <CarLogoRow />
 
   <div class="card-grid">
-    {services.map(service => (
-      <ServiceCard {...service} />
-    ))}
+    {services.map((service) => <ServiceCard {...service} />)}
   </div>
 </section>
 
 <style>
-.services {
-  text-align: center;
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  .services {
+    text-align: center;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-.services h1 {
-  font-family: "apotek-extrawide", sans-serif;
-  margin-bottom: -0.5rem;
-  color: #414141;
-}
+  .services h1 {
+    font-family: "apotek-extrawide", sans-serif;
+    line-height: 100%;
+    margin-bottom: -0.5rem;
+    text-wrap: pretty;
+    color: #414141;
+  }
 
-.subtitle {
-  margin-bottom: 1.0rem;
-  color: #414141;
-}
+  .subtitle {
+    margin-bottom: 1rem;
+    line-height: 150%;
+    text-wrap: pretty;
+    color: #414141;
+  }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 6rem;
-}
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 6rem;
+  }
 </style>

@@ -11,7 +11,7 @@ const topServices = [
     We can inspect noises, check engine lights, shifting concerns, and any 
     engine performance issues you have so we can ensure that you are safe on the road.`,
   },
-  
+
   {
     title: "Engine Repairs",
     image: "public/assets/photos/EngineRepair.jpg",
@@ -45,7 +45,7 @@ const bottomServices = [
     all of our prices.`,
   },
 
-   {
+  {
     title: "Cooling System Problems",
     image: "public/assets/photos/Cooling.jpg",
     alt: "Cooling System Problems",
@@ -60,51 +60,47 @@ const bottomServices = [
 <section class="services-section">
   <div class="services-inner">
     <div class="grid-two">
-      {topServices.map(service => (
-        <ServiceCardB {...service} />
-      ))}
+      {topServices.map((service) => <ServiceCardB {...service} />)}
     </div>
 
     <div class="grid-three">
-      {bottomServices.map(service => (
-        <ServiceCardB {...service} />
-      ))}
+      {bottomServices.map((service) => <ServiceCardB {...service} />)}
     </div>
   </div>
 </section>
 
 <style>
-.services-section {
-  display: flex;
-  justify-content: center;
-}
+  .services-section {
+    display: flex;
+    justify-content: center;
+  }
 
-.services-inner {
-  width: 100%;
-  max-width: 1200px;
-  background-color: #24222c;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .services-inner {
+    width: 100%;
+    max-width: 1500px;
+    background-color: #24222c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.grid-two {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  width: 90%;
-  gap: 2rem;
-  justify-items: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 1rem 0;
-}
+  .grid-two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 90%;
+    gap: 2rem;
+    justify-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+  }
 
-.grid-three {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  width: 90%;
-  gap: 2rem;
-  justify-items: center;
-  margin-bottom: 2rem;
-}
+  .grid-three {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    width: 90%;
+    gap: 2rem;
+    justify-items: center;
+    margin-bottom: 2rem;
+  }
 </style>

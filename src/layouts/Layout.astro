@@ -7,47 +7,61 @@
     <meta name="generator" content={Astro.generator} />
     <title>The Toy Shop</title>
 
-    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
 
-    <link rel="stylesheet" href="https://use.typekit.net/fgb4dgi.css">
+    <link rel="stylesheet" href="https://use.typekit.net/fgb4dgi.css" />
   </head>
 
   <body>
     <slot />
-      <script is:inline>
-      window.onload = function() {
-        const script = document.createElement('script');
-        script.src = 'https://booking.tekmetric.com/iframe/modal.js?time=' + new Date().getTime();
-        script.defer = true;
-        document.body.appendChild(script);
-
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://booking.tekmetric.com/iframe/modal.css?time=' + new Date().getTime();
-        document.head.appendChild(link);
-      };
-    </script>
   </body>
 </html>
 
 <style>
-  html,
   body {
+    padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
-    font-family: "inter-variable", sans-serif;
-    font-variation-settings: "slnt" 0, "wght" 400;
+    font-variation-settings:
+      "slnt" 0,
+      "wght" 400;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: "apotek-extrawide", sans-serif;
     font-weight: 700;
     font-style: normal;
   }
 
-  p, a, li, span, input, button {
+  p,
+  a,
+  li,
+  span,
+  input,
+  button {
     font-family: "inter-variable", sans-serif;
-    font-variation-settings: "slnt" 0, "wght" 400;
+    font-variation-settings:
+      "slnt" 0,
+      "wght" 400;
   }
 </style>
+<script is:inline>
+  window.onload = function () {
+    const script = document.createElement("script");
+    script.src =
+      "https://booking.tekmetric.com/iframe/modal.js?time=" +
+      new Date().getTime();
+    script.defer = true;
+    document.body.appendChild(script);
+
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href =
+      "https://booking.tekmetric.com/iframe/modal.css?time=" +
+      new Date().getTime();
+    document.head.appendChild(link);
+  };
+</script>

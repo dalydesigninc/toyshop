@@ -6,31 +6,36 @@ import Iconsrow from "../../components/Iconsrow.astro";
   <div class="full-service-inner">
     <div class="text-side">
       <div class="text-content">
-        <h2>The Toy Shop is a<br> 
-            full services shop.</h2>
+        <h2>The Toy Shop is a full services shop.</h2>
         <div class="icon-row-wrapper">
-        <Iconsrow />
+          <Iconsrow />
         </div>
         <p>
-          The Toy Shop have ASE Certified technicians that are able to perform any repair from a basic oil change 
-          service to engine/transmission repair or replacement. We only use factory made parts for the vehicles we 
-          service so that you are getting a quality part for half the price that the dealership charges you.
+          The Toy Shop have ASE Certified technicians that are able to perform
+          any repair from a basic oil change service to engine/<wbr
+          />transmission repair or replacement. We only use factory made parts
+          for the vehicles we service so that you are getting a quality part for
+          half the price that the dealership charges you.
         </p>
       </div>
     </div>
 
     <div class="image-side">
-      <img src="/assets/photos/WhiteCarRear.jpg" alt="White Car" loading="lazy" />
+      <img
+        src="/assets/photos/WhiteCarRear.jpg"
+        alt="White Car"
+        loading="lazy"
+      />
     </div>
   </div>
 
-<div class="services-include">
-  <div class="services-header">  
-    <h3>Services include</h3>
+  <div class="services-include">
+    <div class="services-header">
+      <h3>Services include</h3>
       <div class="icon-row-wrapper">
         <Iconsrow />
       </div>
-    </div>  
+    </div>
 
     <ul class="service-list">
       <li>Complete Computer Diagnostics</li>
@@ -47,11 +52,8 @@ import Iconsrow from "../../components/Iconsrow.astro";
 </section>
 
 <style>
-  
   .full-service {
-    width: 100%;
     padding: 0;
-    margin: 0 auto;
   }
 
   .full-service-inner {
@@ -82,9 +84,10 @@ import Iconsrow from "../../components/Iconsrow.astro";
   .text-content h2 {
     font-family: "apotek-extrawide", sans-serif;
     color: #fff;
-    font-size: 5rem;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    line-height: 95%;
+    margin-bottom: 0.2rem;
+    text-wrap: balance;
   }
 
   .text-content p {
@@ -92,6 +95,8 @@ import Iconsrow from "../../components/Iconsrow.astro";
     color: #fff;
     font-size: 1.2rem;
     margin-top: 1.5rem;
+    line-height: 180%;
+    text-wrap: pretty;
   }
 
   .image-side {
@@ -158,5 +163,4 @@ import Iconsrow from "../../components/Iconsrow.astro";
     padding-left: 16px;
     position: relative;
   }
-
 </style>

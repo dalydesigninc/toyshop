@@ -13,27 +13,22 @@ const logos = [
 ---
 
 <div class="icons-row">
-    {logos.map(logo => (
-     <img src={logo.src} alt={logo.alt} loading="lazy" />
-     ))}
+  {logos.map((logo) => <img src={logo.src} alt={logo.alt} loading="lazy" />)}
 </div>
 
 <style>
-    
-    .icons-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 2.5rem;
-        padding: 1.5rem 1rem;
-    }
+  .icons-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.5rem 1rem;
+  }
 
-    .icons-row img {
-        max-height: 30px;
-        width: auto;
-        object-fit: contain;
-    }
-
+  .icons-row img {
+    max-height: 30px;
+    width: auto;
+    object-fit: contain;
+  }
 </style>
-
