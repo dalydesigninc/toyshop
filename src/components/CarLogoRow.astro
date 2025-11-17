@@ -20,21 +20,21 @@ const logos = [
 </div>
 
 <style>
-    
-    .car-logo-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-        padding: 1.5rem 1rem;
-    }
 
-    .car-logo-row img {
-        max-height: 45px;
-        width: auto;
-        object-fit: contain;
-    }
+.car-logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  gap: clamp(0.1rem, 2vw, 1.5rem);
+}
+
+.car-logo-row img {
+  flex: 0 1 auto;
+   height: clamp(30px, 4vw, 45px);
+  width: auto;
+}
 
 </style>
 

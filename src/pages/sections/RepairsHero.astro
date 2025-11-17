@@ -5,7 +5,7 @@
   <div class="image-wrapper"> 
     <img src="/assets/photos/BrokenCar.jpg" alt="Broken Car" class="brokencar-bg"/>
         <div class="overlay">
-            <h1>Vehicle not running like it used to?</h1>
+            <h2>Vehicle not running like it used to?</h2>
             <p>
                 Sometimes repairs go beyond basic services and The Toy Shop
                 are here to help!
@@ -28,7 +28,7 @@
 
 .image-wrapper {
   position: relative;
-  width: 1200px;
+  width: 1500px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -53,11 +53,13 @@
   padding: 2rem;
 }
 
-.overlay h1 {
+.overlay h2 {
   font-family: "apotek-extrawide", sans-serif;
   color: #e41e26;
   font-size: 3.5rem;
+  line-height: 95%;
   margin-bottom: 0.5rem;
+  text-wrap: balance;
 }
 
 .overlay p {
@@ -66,5 +68,6 @@
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
+  text-wrap: pretty;
 }
 </style>

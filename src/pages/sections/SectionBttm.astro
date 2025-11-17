@@ -5,19 +5,15 @@
   <div class="top-content">  
     <img src="/assets/photos/Mountain.jpg" alt="Sierra Nevada" class="mountain-bg"/>
         <div class="overlay">
-            <h1>Over 30 Years of servicing in Shingle Springs.</h1>
+            <h2>Over 30 Years of servicing in Shingle Springs.</h2>
             <div class="info-columns">
             <p>
                 The Toy Shop have ASE Certified technicians that are able to perform any repair from a basic
                 oil change service to engine/<wbr>transmission repair or replacement.
-            </p>
-            
-            <p>
+<br><br>
                 We only use factory made parts for the vehicles we service so that you know you are getting
                 a quality part for half the price that the dealerships charges you.
-            </p>
-            
-            <p>
+<br><br>
                  We scan check engine lights and in most cases basic inspections are at no cost. You can
                 call or email the shop and we will get you a fair price and quick turnaround time.
             </p>
@@ -26,7 +22,7 @@
   </div>
   
   <div class="bottom-content">
-    <h1>Need a second opinion on repairs?</h1>
+    <h3>Need a second opinion on repairs?</h3>
     <p>
         The Toy Shop offers free honest inspections on any import vehicles to save you money!
     </p>  
@@ -39,6 +35,9 @@
 </section>
 
 <style>
+  * {
+    margin: 0;
+  }
 .mountain {
   display: flex;
   flex-direction: column;
@@ -49,7 +48,7 @@
 
 .top-content {
   position: relative;
-  height: 50vh;
+  height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -68,30 +67,45 @@
 .overlay {
   position: relative;
   z-index: 1;
-  padding: 1rem;
+  padding: 1rem 3rem clamp(300px, 10vw, 500px) 3rem;
 }
 
-.overlay h1 {
+.overlay h2 {
   font-family: "apotek-extrawide", sans-serif;
-  font-size: 4rem;
-  margin-bottom: 2rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: 1rem;
+  line-height: 90%;
+  text-wrap: balance;
 }
 
 .overlay p {
   font-size: 1.2rem;
-  line-height: 2;
+  line-height: clamp(1.8rem, 2.5vw, 2.2rem);
 }
 
 .info-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-  text-align: left;
   max-width: 1200px;
   margin: 0 auto;
   font-size: 1.2rem;
-  line-height: 2;
+  line-height: 180%;
+  column-count: 3;
+  column-gap: 4rem;
+  text-align: left;
+  text-wrap: pretty;
 }
+@media (max-width: 1000px) {
+  .info-columns {
+    column-count: 2;
+  }
+}
+@media (max-width: 700px) {
+  .info-columns {
+    column-count: 1;
+  }
+  .overlay h2 {
+    text-align: left;
+}
+  }
 
 /* Bottom */
 
@@ -100,16 +114,20 @@
   padding: 2rem 2rem;
 }
 
-.bottom-content h1 {
+.bottom-content h3 {
   font-family: "apotek-extrawide", sans-serif;
-  font-size: 3.5rem;
-  margin-bottom: 0.2rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 90%;
+  padding-bottom: .5rem;
+  text-wrap: balance;
 }
 
 .bottom-content p {
   font-size: 1.2rem;
+  line-height: 140%;
   color: #fdf499;
-  margin-bottom: 2rem;
+  padding-bottom: 3rem;
+  text-wrap: pretty;
 }
 
 .btn-group {

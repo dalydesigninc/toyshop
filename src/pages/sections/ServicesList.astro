@@ -1,0 +1,87 @@
+---
+import Iconsrow from "../../components/IconsRow.astro";
+---
+  <div class="services-include">
+    <div class="services-header">
+      <h3>Services include</h3>
+      <div class="icon-row-wrapper">
+        <Iconsrow />
+      </div>
+    </div>
+
+    <ul class="service-list">
+      <li>Complete Computer Diagnostics</li>
+      <li>Complete Safety Analysis</li>
+      <li>Drivability Problems</li>
+      <li>Tune-ups</li>
+      <li>Oil Changes</li>
+      <li>Brake repair specialist</li>
+      <li>Steering and Suspensions</li>
+      <li>Free check engine light scans</li>
+      <li>A/C diagnostics and repair</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+
+  .services-include {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 3rem 5rem;
+    box-sizing: border-box;
+  }
+
+  .services-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    column-gap: 3rem;
+  }
+
+  .services-include h3 {
+    font-family: "apotek-extrawide", sans-serif;
+    font-size: 2.5rem;
+    color: #e41e26;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .services-include .icon-row-wrapper {
+    justify-content: space-around;
+    flex: 1;
+    margin: 0 4rem 0 0;
+  }
+
+  .service-list {
+    margin: 0;
+    max-width: 1400px;
+    column-count: 3;
+    column-gap: 2rem;
+    list-style-type: square;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+  }
+
+  @media (max-width: 1000px) {
+  .service-list {
+    column-count: 2;
+  }
+}
+  @media (max-width: 650px) {
+  .service-list {
+    column-count: 1;
+  }
+}
+
+  .service-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    color: #414141;
+    padding-left: 16px;
+    position: relative;
+  }
+</style>

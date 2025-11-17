@@ -28,27 +28,6 @@ import Iconsrow from "../../components/Iconsrow.astro";
       />
     </div>
   </div>
-
-  <div class="services-include">
-    <div class="services-header">
-      <h3>Services include</h3>
-      <div class="icon-row-wrapper">
-        <Iconsrow />
-      </div>
-    </div>
-
-    <ul class="service-list">
-      <li>Complete Computer Diagnostics</li>
-      <li>Complete Safety Analysis</li>
-      <li>Drivability Problems</li>
-      <li>Tune-ups</li>
-      <li>Oil Changes</li>
-      <li>Brake repair specialist</li>
-      <li>Steering and Suspensions</li>
-      <li>Free check engine light scans</li>
-      <li>A/C diagnostics and repair</li>
-    </ul>
-  </div>
 </section>
 
 <style>
@@ -59,27 +38,36 @@ import Iconsrow from "../../components/Iconsrow.astro";
   .full-service-inner {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
     background-color: #24222c;
-    min-height: 500px;
   }
 
   .text-side {
     display: flex;
+    justify-content: right;
     flex: 1 1 50%;
-    min-width: 320px;
+    min-width: 500px;
     color: #fff;
-    padding: 2rem;
-    justify-content: center;
+    padding: 0 0 0 3rem ;
     align-items: center;
     box-sizing: border-box;
   }
+  @media (max-width: 1100px) {
+  .text-side {
+    justify-content: center;
+  }
+  .text-content {
+    max-width: 100%;   
+        margin: auto;
+  }
+}
 
   .text-content {
     max-width: 700px;
-    width: 100%;
+    padding: 4rem 4rem 5rem 0;
+    max-width: 600px;
+    margin: 0;
   }
+  
 
   .text-content h2 {
     font-family: "apotek-extrawide", sans-serif;
@@ -101,7 +89,7 @@ import Iconsrow from "../../components/Iconsrow.astro";
 
   .image-side {
     flex: 1 1 50%;
-    min-width: 320px;
+    min-width: 500px;
     box-sizing: border-box;
   }
 
@@ -112,55 +100,7 @@ import Iconsrow from "../../components/Iconsrow.astro";
     display: block;
   }
 
-  .icon-row-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    max-width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 0;
-  }
 
-  .services-include {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 2rem 5rem;
-    box-sizing: border-box;
-  }
 
-  .services-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-  }
 
-  .services-include h3 {
-    font-family: "apotek-extrawide", sans-serif;
-    font-size: 2.5rem;
-    color: #e41e26;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  .services-include .icon-row-wrapper {
-    justify-content: center;
-    margin: 0;
-  }
-
-  .service-list {
-    margin: 0 auto;
-    max-width: 1000px;
-    column-count: 3;
-    column-gap: 4rem;
-  }
-
-  .service-list li {
-    margin-bottom: 0.75rem;
-    font-size: 1.2rem;
-    color: #414141;
-    padding-left: 16px;
-    position: relative;
-  }
 </style>
