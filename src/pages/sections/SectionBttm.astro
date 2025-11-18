@@ -1,35 +1,51 @@
 ---
+
 ---
 
 <section class="mountain">
-  <div class="top-content">  
-    <img src="/assets/photos/Mountain.jpg" alt="Sierra Nevada" class="mountain-bg"/>
-        <div class="overlay">
-            <h2>Over 30 Years of servicing in Shingle Springs.</h2>
-            <div class="info-columns">
-            <p>
-                The Toy Shop have ASE Certified technicians that are able to perform any repair from a basic
-                oil change service to engine/<wbr>transmission repair or replacement.
-<br><br>
-                We only use factory made parts for the vehicles we service so that you know you are getting
-                a quality part for half the price that the dealerships charges you.
-<br><br>
-                 We scan check engine lights and in most cases basic inspections are at no cost. You can
-                call or email the shop and we will get you a fair price and quick turnaround time.
-            </p>
-        </div>
+  <div class="top-content">
+    <img
+      src="/assets/photos/Mountain.jpg"
+      alt="Sierra Nevada"
+      class="mountain-bg"
+    />
+    <div class="overlay">
+      <h2>Over 30 Years of servicing in Shingle Springs.</h2>
+      <div class="info-columns">
+        <p>
+          The Toy Shop have ASE Certified technicians that are able to perform
+          any repair from a basic oil change service to engine/<wbr
+          />transmission repair or replacement.
+          <br /><br />
+          We only use factory made parts for the vehicles we service so that you
+          know you are getting a quality part for half the price that the dealerships
+          charges you.
+          <br /><br />
+          We scan check engine lights and in most cases basic inspections are at
+          no cost. You can call or email the shop and we will get you a fair price
+          and quick turnaround time.
+        </p>
+      </div>
     </div>
   </div>
-  
+
   <div class="bottom-content">
     <h3>Need a second opinion on repairs?</h3>
     <p>
-        The Toy Shop offers free honest inspections on any import vehicles to save you money!
-    </p>  
+      The Toy Shop offers free honest inspections on any import vehicles to save
+      you money!
+    </p>
     <div class="btn-group">
-      <button class="button" type="button" onclick="onShowBooking('d4156edb-ca3a-4e73-bd01-c60ba4bd8e94')"
-      >BOOK AN APPOINTMENT</button>
-      <button class="button secondary" onclick="window.location.href='tel:+15305551234'">CALL US</button>
+      <button
+        class="button"
+        type="button"
+        onclick="onShowBooking('d4156edb-ca3a-4e73-bd01-c60ba4bd8e94')"
+        >BOOK AN APPOINTMENT</button
+      >
+      <button
+        class="button secondary"
+        onclick="window.location.href='tel:+15305551234'">CALL US</button
+      >
     </div>
   </div>
 </section>
@@ -38,123 +54,123 @@
   * {
     margin: 0;
   }
-.mountain {
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  text-align: center;
-  overflow: hidden;  
-}
-
-.top-content {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 2rem;
-}
-
-.mountain-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.overlay {
-  position: relative;
-  z-index: 1;
-  padding: 1rem 3rem clamp(300px, 10vw, 500px) 3rem;
-}
-
-.overlay h2 {
-  font-family: "apotek-extrawide", sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  padding-bottom: 1rem;
-  line-height: 90%;
-  text-wrap: balance;
-}
-
-.overlay p {
-  font-size: 1.2rem;
-  line-height: clamp(1.8rem, 2.5vw, 2.2rem);
-}
-
-.info-columns {
-  max-width: 1200px;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 180%;
-  column-count: 3;
-  column-gap: 4rem;
-  text-align: left;
-  text-wrap: pretty;
-}
-@media (max-width: 1000px) {
-  .info-columns {
-    column-count: 2;
+  .mountain {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
   }
-}
-@media (max-width: 700px) {
-  .info-columns {
-    column-count: 1;
+
+  .top-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 2rem;
   }
+
+  .mountain-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .overlay {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 3rem clamp(300px, 10vw, 500px) 3rem;
+  }
+
   .overlay h2 {
-    text-align: left;
-}
+    font-family: "apotek-extrawide", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: 1rem;
+    line-height: 90%;
+    text-wrap: balance;
   }
 
-/* Bottom */
+  .overlay p {
+    font-size: 1.2rem;
+    line-height: clamp(1.8rem, 2.5vw, 2.2rem);
+  }
 
-.bottom-content {
-  background-color: #24222c;
-  padding: 2rem 2rem;
-}
+  .info-columns {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 180%;
+    column-count: 3;
+    column-gap: 4rem;
+    text-align: left;
+    text-wrap: pretty;
+  }
+  @media (max-width: 1000px) {
+    .info-columns {
+      column-count: 2;
+    }
+  }
+  @media (max-width: 700px) {
+    .info-columns {
+      column-count: 1;
+    }
+    .overlay h2 {
+      text-align: left;
+    }
+  }
 
-.bottom-content h3 {
-  font-family: "apotek-extrawide", sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 90%;
-  padding-bottom: .5rem;
-  text-wrap: balance;
-}
+  /* Bottom */
 
-.bottom-content p {
-  font-size: 1.2rem;
-  line-height: 140%;
-  color: #fdf499;
-  padding-bottom: 3rem;
-  text-wrap: pretty;
-}
+  .bottom-content {
+    background-color: #24222c;
+    padding: 2rem 2rem;
+  }
 
-.btn-group {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 4rem;
-}
+  .bottom-content h3 {
+    font-family: "apotek-extrawide", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 90%;
+    padding-bottom: 0.5rem;
+    text-wrap: balance;
+  }
 
-.button {
-  background: #f0503a;
-  border: 1px solid #fff;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  text-decoration: none;
-  cursor: pointer;
-}
+  .bottom-content p {
+    font-size: 1.2rem;
+    line-height: 140%;
+    color: #fdf499;
+    padding-bottom: 3rem;
+    text-wrap: pretty;
+  }
 
-.button.secondary {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid #fff;
-  cursor: pointer;
-}
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
 
-.button.secondary:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
+  .button {
+    background: #f0503a;
+    border: 1px solid #fff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .button.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #fff;
+    cursor: pointer;
+  }
+
+  .button.secondary:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
 </style>

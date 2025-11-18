@@ -42,12 +42,14 @@ const services = [
   <CarLogoRow />
 
   <div class="card-grid">
-    {services.map((service) => <ServiceCard {...service} />)}
+    <ServiceCard {...services[0]} first />
+    <ServiceCard {...services[1]} />
+    <ServiceCard {...services[2]} />
   </div>
 </section>
 
 <style>
-  * {    
+  * {
     text-wrap: pretty;
     color: #414141;
   }
@@ -71,8 +73,12 @@ const services = [
 
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin-bottom: 6rem;
   }
+  @media (max-width: 700px) {
+    .card-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
 </style>

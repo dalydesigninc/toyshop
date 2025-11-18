@@ -1,83 +1,102 @@
----
-import ServiceCardB from "../../components/ServiceCardB.astro";
-
-const topServices = [
-  {
-    title: "Mechanical Problems",
-    image: "public/assets/photos/Mechanical.jpg",
-    alt: "Mechanical Problems",
-    description: `The Toy Shop inspects major and minor mechanical concerns. 
-    Using the latest scan tools, we can diagnose any problem your vehicle has. 
-    We can inspect noises, check engine lights, shifting concerns, and any 
-    engine performance issues you have so we can ensure that you are safe on the road.`,
-  },
-
-  {
-    title: "Engine Repairs",
-    image: "public/assets/photos/EngineRepair.jpg",
-    alt: "Engine Repairs - Photograph by Garett Mizunaka, Unsplash",
-    description: `The Toy Shop performs all repairs with factory parts and 
-    fair labor times for all jobs. From head gasket repairs/replacement, throttles, 
-    valve adjustments, vacuum lines, and even full engine replacement.`,
-  },
-];
-
-const bottomServices = [
-  {
-    title: "Electrical Problems",
-    image: "public/assets/photos/Electrical.jpg",
-    alt: "Electrical Problems",
-    description: `The Toy Shop has the capability to diagnose many electrical 
-    problems, such as: broken/chewed wires, inoperable windows/automatic doors, 
-    a/c and heater concerns, batteries and charging systems, bad sensors, and much 
-    more. We charge a diagnostic fee of $110.00 for wiring sensor inspection. We also 
-    can diagnose hybrid batteries as well!`,
-  },
-
-  {
-    title: "Transmission & Clutch Repairs",
-    image: "public/assets/photos/Transmission.jpg",
-    alt: "Transmission & Clutch Repairs",
-    description: `The Toy Shop performs transmission diagnosis for any kind of 
-    issue/concern you might be having as well as full transmission replacement if 
-    necessary. We also perform full clutch replacement services for manual transmissions. 
-    Using factory clutch kits, we also include resurfacing flywheels and fluids in 
-    all of our prices.`,
-  },
-
-  {
-    title: "Cooling System Problems",
-    image: "public/assets/photos/Cooling.jpg",
-    alt: "Cooling System Problems",
-    description: `Diagnostics include pressure testing the cooling system as well as a 
-    leak down test on the cylinder heads if needed. We are able to replace any hoses, 
-    sensors, and/or your radiator as well! Plus, we only use factory coolant for all 
-    services on the cooling system of your vehicle for maximum longevity and performance.`,
-  },
-];
----
-
 <section class="services-section">
-  <div class="services-inner">
-    <div class="grid-two">
-      {topServices.map((service) => <ServiceCardB {...service} />)}
-    </div>
-
-    <div class="grid-three">
-      {bottomServices.map((service) => <ServiceCardB {...service} />)}
-    </div>
+<div class="grid">
+  <div class="service-image">
+    <img src="/public/assets/photos/Mechanical.jpg" alt="Mechanical Problems" loading="lazy" />
   </div>
+  <div class=”service-content”>
+    <h3>Mechanical Problems</h3>
+    <p>The Toy Shop inspects major and minor mechanical concerns. Using the latest scan tools, we can diagnose any problem your vehicle has. 
+    We can inspect noises, check engine lights, shifting concerns, and any engine performance issues you have so we can ensure that you are safe on the road.</p>
+  </div>
+</div>
+<div class="grid">
+  <div class="service-image">
+    <img src="/public/assets/photos/EngineRepair.jpg" alt="Engine Repairs" loading="lazy" />
+  </div>
+  <div class=”service-content”>
+    <h3>Engine Repairs</h3>
+    <p>The Toy Shop performs all repairs with factory parts and fair labor times for all jobs. From head gasket repairs/replacement, throttles, valve adjustments, vacuum lines, and even full engine replacement.</p>
+  </div>
+</div>
+<div class="grid">
+  <div class="service-image">
+    <img src="/public/assets/photos/Electrical.jpg" alt="Electrical Problems" loading="lazy" />
+  </div>
+  <div class=”service-content”>
+    <h3>Electrical Problems</h3>
+    <p>The Toy Shop has the capability to diagnose many electrical problems, such as: broken/chewed wires, inoperable windows/automatic doors, a/c and heater concerns, batteries and charging systems, bad sensors, and much more. We charge a diagnostic fee of $110.00 for wiring sensor inspection. We also can diagnose hybrid batteries as well!</p>
+  </div>
+</div>
+<div class="grid">
+  <div class="service-image">
+    <img src="/public/assets/photos/Transmission.jpg" alt="Transmission & Clutch Repairs" loading="lazy" />
+  </div>
+  <div class=”service-content”>
+    <h3>Transmission & Clutch Repairs</h3>
+    <p>The Toy Shop performs transmission diagnosis for any kind of 
+    issue/concern you might be having as well as full transmission replacement if necessary. We also perform full clutch replacement services for manual transmissions. Using factory clutch kits, we also include resurfacing flywheels and fluids in all of our prices.</p>
+  </div>
+</div>
+<div class="grid">
+  <div class="service-image">
+    <img src="/public/assets/photos/Cooling.jpg" alt="Cooling System Problems" loading="lazy" />
+  </div>
+  <div class=”service-content”>
+    <h3>Cooling System Problems</h3>
+    <p>The Toy Shop has the capability to diagnose many cooling system problems, such as: pressure testing the cooling system, leak down tests on the cylinder heads, and replacing hoses, sensors, and radiators. We only use factory coolant for all services on the cooling system of your vehicle for maximum longevity and performance!</p>
+  </div>
+</div>
 </section>
 
 <style>
-  .services-section {
+      margin: 0;
+  }
+  .grid {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background-color: #24222c;
+    color: #fff;
+    overflow: hidden;
+    flex: 1;
   }
 
-  .services-inner {
+  .service-image {
     width: 100%;
-    max-width: 1500px;
+    overflow: hidden;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .service-content {
+    padding: 1.25rem 0;
+    background-color: #24222c;
+    text-align: left;
+  }
+
+  .service-content h3 {
+    font-family: "apotek-extrawide", sans-serif;
+    color: #fdf499;
+    font-size: 1.5rem;
+    padding-bottom: 0.75rem;
+    font-weight: 700;
+    text-align: left;
+    text-wrap: balance;
+  }
+
+  .service-content p {
+    font-size: 1.2rem;
+    line-height: 180%;
+    color: #fff;
+    text-align: left;
+  }
+
+  .services-section {
+    padding: 2rem 5rem;
+    width: 100%;
     background-color: #24222c;
     display: flex;
     flex-direction: column;
@@ -87,20 +106,22 @@ const bottomServices = [
   .grid-two {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    width: 90%;
-    gap: 2rem;
+    width: 100%;
+    gap: 3rem;
     justify-items: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 1rem 0;
+    padding: 0.5rem 2rem;
   }
 
   .grid-three {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    width: 90%;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    width: 100%;
+    gap: 3rem;
     justify-items: center;
-    margin-bottom: 2rem;
+    padding: 0.5rem clamp(1rem, 5vw, 2rem);
   }
+  @media screen and (max-width: 1000px) {
+    .grid-three :first-child {
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    }
 </style>
