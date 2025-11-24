@@ -1,43 +1,5 @@
 ---
-import ServiceCard from "../../components/ServiceCard.astro";
-import CouponCard from "../../components/CouponCard.astro";
 
-const specials = [
-  {
-    title: "$59.99+Tax up to 5 Quart Oil Change Service",
-    image: "public/assets/photos/OilChange.jpg",
-    alt: "Oil change service",
-    description: `Free multipoint inspection with all oil changes.
-    Oil changes that require more than 5 quarts will be charged at 
-    non-discounted prices for the remaining quarts. Limit 1 Per Vehicle.`,
-  },
-  
-  {
-    title: "The Toy Shop Timing Belt Special",
-    image: "public/assets/photos/FactoryService.jpg",
-    alt: "Timing belt service",
-    description: `Free timing belt with service-pay only for the labor!
-    Includes all Toyota, Honda, Subaru, Nissan equipped with timing belts.
-    Recommend to replace water pump with service. Only OEM parts used.`,
-  },
-];
-
-const coupons = [
-  {
-    amount: "$10 Off",
-    description: "Any repair or maintenance service of $100 and up."
-  },
-
-   {
-    amount: "$20 Off",
-    description: "Any repair or maintenance service of $200 and up."
-  },
-
-   {
-    amount: "$50 Off",
-    description: "Any repair or maintenance service of $600 and up."
-  },
-];
 ---
 
 <section class="specials">
@@ -46,27 +8,64 @@ const coupons = [
     <span class="line"></span>
   </div>
 
-  <div class="card-grid">
-    {specials.map(service => (
-      <ServiceCard {...service} />
-    ))}
+<div class="card-grid">
+  <div class="card card1">
+  <div class="top">
+    <img src="/public/assets/photos/OilChange.jpg" alt="Oil change service" />
+    <h3>$59.99<span class="sub">+Tax</span> up to 5 Quart Oil Change Service</h3>
+  </div>
+  <p>Free multipoint inspection with all oil changes. Oil changes that require more than 5 quarts will be charged at non-discounted prices for the remaining quarts. Limit 1 Per Vehicle.</p>
   </div>
 
-  <div class="coupon-grid">
-    {coupons.map(coupon => (
-      <CouponCard {...coupon} />
-    ))}
+<div class="card card2">
+  <div class="top">
+    <img src="/public/assets/photos/FactoryService.jpg" alt="Timing belt service" />
+    <h3>The Toy Shop Timing Belt Special</h3>
   </div>
+  <p>Free timing belt with service-pay only for the labor! Includes all Toyota, Honda, Subaru, Nissan equipped with timing belts. Recommend to replace water pump with service. Only OEM parts used.</p>
+</div>
 
+
+<div class="card card3">
+   <div class="coupon-content"> 
+    <p><span class="h-4">$10&nbsp;OFF</span>Any repair or maintenance service of $100 and up.</p>
+   </div>
+</div>
+
+<div class="card card4">
+   <div class="coupon-content"> 
+    <p><span class="h-4">$20&nbsp;OFF</span>Any repair or maintenance service of $200 and up.</p>
+   </div>
+</div>
+
+<div class="card card5">
+   <span class="coupon-content"> 
+    <p><span class="h-4">$50&nbsp;OFF</span> Any repair or maintenance service of $600 and up.</p>
+   </div>
+</div>
+</div>
 </section>
 
 <style>
+* {
+  text-wrap: pretty;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- header styles ---------- */
 .specials {
   display: flex;
   flex-direction: column;
   text-align: left;
   max-width: 1000px;
   margin: 6rem auto;
+}
+@media screen and (max-width: 950px) {
+  .specials {
+    margin: 4rem 1rem;
+  }
+
 }
 
 .specials-header {
@@ -93,22 +92,85 @@ const coupons = [
   align-items: center;
 }
 
+/* ---------- grid styles ---------- */
+
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(6, 1fr) [col-start];
   width: 100%;
-  gap: 2rem;
+  gap: 1rem;
   justify-items: center;
   margin-bottom: 2rem;
 }
 
-.coupon-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  width: 100%;
-  gap: 2rem;
-  justify-items: center;
-  margin-bottom: 2rem;
+.card1, .card2 {
+  grid-column: span 3;
+
 }
 
+.card3, .card4, .card5 {
+  grid-column: span 2;
+}
+
+@media screen and (max-width: 700px) {
+
+.card {
+  grid-column: span 6;
+  width: 100%;
+}
+}
+
+.sub {
+  font-size: 50%;
+}
+
+
+/* ---------- top cards styles ---------- */
+  .card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #414141;
+    color: #fff;
+  }
+  
+  .top h3,  .coupon-content, .card1 p, .card2 p {
+        padding: 2rem;
+  }
+
+  div,
+  img {
+    position: relative;
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(45%);
+  }
+
+  .top h3 {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+h3, h4, .h-4 {
+    font-family: "apotek-extrawide", sans-serif;
+    letter-spacing: 1px;
+    color: #fffa92;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    line-height: 97%;
+    text-align: left;
+    text-wrap: balance;
+}
+
+  p {
+    background-color: #414141;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 180%;
+    color: #fff;
+    text-align: left;
+  }
 </style>

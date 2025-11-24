@@ -1,38 +1,9 @@
 ---
-import ServiceCard from "../../components/ServiceCard.astro";
 import CarLogoRow from "../../components/CarLogoRow.astro";
-
-const services = [
-  {
-    title: "Brake and Rotors.",
-    image: "public/assets/photos/BrakeRotors.jpg",
-    alt: "Brake service",
-    description: `Brakes making noise or just don't grab like they used to?
-    The Toy Shop offers free brake inspections for all vehicles.
-    All brake jobs include factory brake pads, machining rotors (unless beyond minimum limit) & lubrication.`,
-  },
-
-  {
-    title: "Time for an oil change.",
-    image: "public/assets/photos/OilChange.jpg",
-    alt: "Oil change service",
-    description: `The Toy Shop uses factory oil filters and high quality Chevron oil for all oil changes. Prices 
-    vary depending on engine size. All oil changes include full vehicle inspection including brakes, belts/hoses 
-    and we even top off your fluids!`,
-  },
-
-  {
-    title: "Factory Service Interval.",
-    image: "public/assets/photos/FactoryService.jpg",
-    alt: "Factory service maintenance",
-    description: `Is your vehicle due for a major service? The Toy Shop offers factory recommended service catering to 
-    your vehicle. From spark plugs, coolant, transmission fluid, even timing belt and water pump replacement.`,
-  },
-];
 ---
 
 <section class="services">
-  <h1>Your Shingle Springs import car service shop.</h1>
+  <h2>Your Shingle Springs import car service shop.</h2>
   <p class="subtitle">
     The Toy Shop basic vehicle maintenance schedule is a great way to keep your
     vehicle running for many years to come!
@@ -40,12 +11,34 @@ const services = [
 
   <!-- Car Logo Row -->
   <CarLogoRow />
-
-  <div class="card-grid">
-    <ServiceCard {...services[0]} first />
-    <ServiceCard {...services[1]} />
-    <ServiceCard {...services[2]} />
+<section class="service-grid">
+   <article class="card card1">
+  <div class="top">
+      <div class="service-image">
+        <img src="/public/assets/photos/BrakeRotors.jpg" alt="Brake service" loading="lazy" />
+      </div>
+    <h4>Brake and Rotors.</h4>
   </div>
+  <p>Brakes making noise or just don't grab like they used to? The Toy Shop offers free brake inspections for all vehicles. All brake jobs include factory brake pads, machining rotors (unless beyond minimum limit) & lubrication.</p>
+</article>
+   <article class="card card2">
+  <div class="top">
+      <div class="service-image">
+        <img src="/public/assets/photos/OilChange.jpg" alt="Oil change service" loading="lazy" />
+      </div>
+    <h4>Time for an oil change.</h4>
+  </div>
+  <p>The Toy Shop uses factory oil filters and high quality Chevron oil for all oil changes. Prices vary depending on engine size. All oil changes include full vehicle inspection including brakes, belts/hoses and we even top off your fluids!</p>
+</article>
+   <article class="card card3">
+  <div class="top">
+      <div class="service-image">
+        <img src="/public/assets/photos/FactoryService.jpg" alt="Factory service maintenance" loading="lazy" />
+      </div>
+    <h4>Factory Service Interval.</h4>
+  </div>
+  <p>Is your vehicle due for a major service? The Toy Shop offers factory recommended service catering to your vehicle. From spark plugs, coolant, transmission fluid, even timing belt and water pump replacement.</p>
+</article>
 </section>
 
 <style>
@@ -60,8 +53,9 @@ const services = [
     margin: 0 auto;
   }
 
-  .services h1 {
+  .services h2 {
     font-family: "apotek-extrawide", sans-serif;
+    font-size: 2rem;
     line-height: 100%;
     margin-bottom: -0.5rem;
   }
@@ -71,14 +65,72 @@ const services = [
     line-height: 150%;
   }
 
-  .card-grid {
+  .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(6, 1fr) [col-start];
     gap: 1rem;
     margin-bottom: 6rem;
   }
-  @media (max-width: 700px) {
-    .card-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
+  
+  .card {
+    display: flex;
+    position: relative;
+    grid-column: span 2;
+    flex-direction: column;
+    background-color: #414141;
+    color: #fff;
+  }
+
+@media screen and (max-width: 950px) {
+
+.card1 {
+  grid-column: span 6;
+}
+
+.card2, .card3 {
+  grid-column: span 3;
+}
+}
+
+@media screen and (max-width: 700px) {
+
+.card {
+  grid-column: span 6;
+}
+}
+
+  .top {
+    position: relative;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(45%);
+  }
+
+  h4 {
+    position: absolute;
+    font-family: "apotek-extrawide", sans-serif;
+    padding: 2rem;
+    padding-right: 2.5rem;
+    top: 50%;
+    transform: translate(0, -75%);
+    letter-spacing: 1px;
+    color: #fffa92;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    line-height: 97%;
+    text-align: left;
+    text-wrap: balance;
+  }
+
+ .card p {
+    padding: 0.75rem 2rem 1.5rem 2rem;
+    font-size: 1rem;
+    line-height: 180%;
+    color: #fff;
+    text-align: left;
+  }
 </style>
