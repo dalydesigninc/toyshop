@@ -5,7 +5,6 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
-  <div class="container">
     <div class="footer-columns">
       <div class="footer-left">
         <img src={ToyLogo.src ?? ToyLogo} alt="The Toy Shop" class="logo" />
@@ -13,23 +12,26 @@ const currentYear = new Date().getFullYear();
           You're always treated like family here at The Toy Shop! We appreciate your time
           and business! Hope to see you soon!
         </p>
-        <p class="copyright"> © {currentYear} The Toy Shop. All Rights Reserved.
-          <a href="/privacy-policy">Privacy Policy</a>
+        <p id="copyright"> ©{currentYear} The Toy Shop. All Rights Reserved.
+          <!-- <a href="/privacy-policy">Privacy Policy</a> -->
         </p>
       </div>
   
     <div class="footer-middle">
-      <div class="map-wrapper">
-        <img src="/assets/logos/Map.jpg" alt="Store Location Map" class="map" />
-      </div>
-        <div class="contact-info">
-        <p class="phone">530-677-0989</p>
+  <div class="footer-section map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2344.8363936763067!2d-120.93141106492784!3d38.66568926528647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809af79011a14c03%3A0xc4bc87c1290cdf0b!2sThe%20Toy%20Shop!5e0!3m2!1sen!2sus!4v1763988037339!5m2!1sen!2sus”"
+      loading="lazy">
+    </iframe>
+  </div>
+  <div class="contact-info">
+        <p class="phone"><a href="tel:5306770989">530-677-0989</a></p>
         <a href="mailto:info@ToyShopAutoRepair.com" class="email">info@ToyShopAutoRepair.com</a>
         <p class="address"> 
           4241 SUNSET LANE<br />
           Shingle Springs, CA 95682
         </p>
-        </div>
+   </div>
     </div>
 
     <div class="footer-right">
@@ -39,10 +41,10 @@ const currentYear = new Date().getFullYear();
       </div>
         <p class="hours">Open Monday-Friday 8:00am-5:00pm</p>
 
-    <div class="facebook">
+    <a class="facebook" href="https://www.facebook.com/profile.php?id=100089926239421" target="_blank" rel="noopener noreferrer">
       <img src="/assets/logos/FB-logo.png" alt="Facebook Logo" class="icon fb" />
       <p>Like us on Facebook for promotional offers and deals!</p>
-    </div>
+    </a>
   </div>
 </footer>
 
@@ -51,6 +53,9 @@ const currentYear = new Date().getFullYear();
     background-color: #414141;
     color: #fff;
     padding: 2.5rem 0;
+    width: 100%;
+    padding: 2rem;;
+    margin: 0 auto;
   }
 
   .container {
@@ -59,12 +64,13 @@ const currentYear = new Date().getFullYear();
  } 
 
   .footer-columns {
+    width: 1200px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-    margin-bottom: 2rem;
- }
+    grid-template-columns: 275px 1fr 275px;
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;}
  
   .footer-left p {
     font-size: 1rem;
@@ -73,35 +79,31 @@ const currentYear = new Date().getFullYear();
 
   .logo {
     height: 48px;
-    margin-bottom: 1rem;
- }
+    padding: 0;
+    margin: 0;
+  }
 
-  .copyright {
+  #copyright {
     font-size: 0.75rem;
-    margin-top: 1.25;
+    paddingop: 1rem;
  }
 
-  .copyright a {
+  /* .copyright a {
     color: #fff;
     text-decoration: underline;
- }
+ } */
 
  /* Middle */
 
   .footer-middle {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     gap: 1.5rem;
   }
 
-  .map-wrapper {
-    flex-shrink: 0;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .map {
-    width: 220px;
+  .map-wrap iframe {
+    width: 250px;
     height: 140px;
     object-fit: cover;
     margin: 0;
@@ -128,7 +130,8 @@ const currentYear = new Date().getFullYear();
     padding: 0;
   }
 
-  .phone {
+  .phone a {
+    text-decoration: none;
     font-family: "apotek-extrawide", sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -137,8 +140,7 @@ const currentYear = new Date().getFullYear();
     margin: 0;
   }
 
-  .email {
-    text-decoration: none;
+  .email, a {
     font-size: 1rem;
     color: #fff;
   }
