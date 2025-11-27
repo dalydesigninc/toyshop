@@ -2,5 +2,5 @@ import { defineConfig } from 'astro/config'
 
 export default defineConfig({
   site: 'https://toyshopautorepair.com',
-  base: 
+  base: '/my-repo',
 })
