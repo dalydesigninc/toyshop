@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  site: 'https://toyshopautorepair.com',
+  site: 'https://dalydesigninc.github.io',
+  base: '/toyshop',
 })
