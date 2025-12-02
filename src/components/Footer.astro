@@ -89,6 +89,13 @@ const currentYear = new Date().getFullYear();
       flex: 2;
       min-width: 400px;
     }
+
+    @media screen and (max-width: 546px) {
+      .footer-col.map-col {
+        min-width: 250px;
+      }
+    }
+
     .footer .container {
       max-width: 1200px;
       margin: auto;
@@ -152,6 +159,12 @@ const currentYear = new Date().getFullYear();
       white-space: nowrap;
       margin: 0;
       line-height: 1rem;
+    }
+
+    @media screen and (max-width: 575px) {
+      .phone a {
+       font-size: 1.5rem;
+      }
     }
 
     .night-title {
